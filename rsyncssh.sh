@@ -1,15 +1,16 @@
 #!/bin/bash
 #
-# This script runs incremental backups of a specified folder, keep logs and send a mail notification.
+# This script runs incremental backups of a distant specified folder, keep logs and send a mail notification.
 # Dependencies : rsync, ssh, and mail
+# You need to properly configure ssh keys on distant server
 # Launch script from destination host, because  --link-dest need a localpath)
 # 
 ###Setup###
 PREFIX="HostSource"
+NAS="HostDest"
 DEST="/home/user/mybackup"
 SOURCE="user@server:/folder_to_backup/"
 DATE=`date '+%F_%H-%M'`
-NAS="HostDest"
 MAIL=user@mail.org
 ##########
 #
